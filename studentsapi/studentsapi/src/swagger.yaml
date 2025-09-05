@@ -1,0 +1,268 @@
+openapi: 3.0.4
+info:
+  title: Students API
+  description: |-
+    This is my first API designed with Swagger, which addresses the student entity using HTTP methods. The related code can be found at the following link: enlace.com **insert link**.
+
+  contact:
+    email: eder_leo16@hotmail.com
+  version: 1.0.0
+
+tags:
+  - name: student
+    description: Enrolled and graduated students
+
+paths:
+  /student:
+    put:
+      tags:
+        - student
+      summary: Update an existing student by tuition.✅
+      description: Update an existing student by tuition.☑️
+      operationId: updateStudent
+      requestBody:
+        description: Update an existent student 😎🏫
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Student"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/Student"
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/Student"
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Student"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Student"
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Student not found
+        "422":
+          description: Validation exception
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      tags:
+        - student
+      summary: Add a new student.
+      description: Register a new student with all their data.
+      operationId: postStudent
+      requestBody:
+        description: Create a new student.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Student"
+          application/xml:
+            schema:
+              $ref: "#/components/schemas/Student"
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/Student"
+        required: true
+      responses:
+        "201":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Student"
+        "400":
+          description: Invalid input.
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    get:
+      tags:
+        - student
+      summary: Retrieve students by status or semester.
+      description: Returns a list of students filtered by their status (enrolled or graduated) or by semester (1 - 10).
+      parameters:
+        - name: status
+          in: query
+          required: false
+          description: Student status (enrolled or graduated).
+          example: cursando
+          schema:
+            type: string
+            enum: [cursando, egresados]
+
+        - name: semester
+          in: query
+          required: false
+          description: Student semester.
+          example: 5
+          schema:
+            type: integer
+            enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      responses:
+        "200":
+          description: List of students
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Student"
+        "400":
+          description: Invalid status parameter.
+        "500":
+          description: Internal server error.
+
+  /student/tuition/{studentTuition}:
+    get:
+      tags:
+        - student
+      summary: Retrieve a student using their tuition number.
+      description: Returns student data in JSON format.
+      operationId: getStudentByTuition
+      parameters:
+        - name: studentTuition
+          in: path
+          description: tuition of student to return
+          required: true
+          example: 2020120047
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Student"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Student"
+
+        "400":
+          description: Invalid tuition supplied
+        "404":
+          description: Student not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    delete:
+      tags:
+        - student
+      summary: Delete a student by tuition number.
+      description: Remove a student from the school using their tuition number.
+      operationId: deleteStudentByTuition
+      parameters:
+        - name: studentTuition
+          in: path
+          description: Tuition number of the student to delete
+          required: true
+          example: 2020120047
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: Invalid student tuition
+        default:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Student:
+      required:
+        - name
+        - tuition
+        - career
+        - semester
+        - status
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        name:
+          type: string
+          description: student name
+          example: Pedro Alejandro Cruz Cruz
+        tuition:
+          type: string
+          example: "2020120047"
+        career:
+          type: string
+          enum:
+            - Enfermeria
+            - Informática
+            - Medicina veterinaria
+            - Biología
+            - Forestal
+          example: "Informática"
+        semester:
+          type: integer
+          format: int64
+          description: "in the range 1-10"
+          example: 5
+        status:
+          type: string
+          description: student status in the school
+          enum:
+            - enrolled
+            - graduated
+      xml:
+        name: Student
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string
+      xml:
+        name: "##default"
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      required:
+        - code
+        - message
+  requestBodies:
+    Student:
+      description: Student object that needs to be added to the school
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Student"
+        application/xml:
+          schema:
+            $ref: "#/components/schemas/Student"

@@ -1,0 +1,12 @@
+[
+  {
+    "teacherId": 1,
+    "fullName": "María López Díaz",
+    "careerId": 1
+  },
+  {
+    "teacherId": 2,
+    "fullName": "Carlos Ruiz Sánchez",
+    "careerId": 2
+  }
+]

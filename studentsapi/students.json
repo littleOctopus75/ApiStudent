@@ -1,0 +1,81 @@
+[ {
+  "studentId" : 1,
+  "fullName" : "Juan Carlos García Castro",
+  "tuition" : "2020120047",
+  "semester" : 5,
+  "status" : "enrolled",
+  "careerId" : 2,
+  "scheduleId" : 2
+}, {
+  "studentId" : 2,
+  "fullName" : "Pedro Alejandro Cruz Cruz",
+  "tuition" : "2020120051",
+  "semester" : 9,
+  "status" : "enrolled",
+  "careerId" : 2,
+  "scheduleId" : 1
+}, {
+  "studentId" : 10,
+  "fullName" : "Alan Brito de la Torre",
+  "tuition" : "2020120080",
+  "semester" : 10,
+  "status" : "graduated",
+  "careerId" : 1,
+  "scheduleId" : 2
+}, {
+  "studentId" : 11,
+  "fullName" : "Alfonso Castañeda",
+  "tuition" : "2022120061",
+  "semester" : 8,
+  "status" : "graduated",
+  "careerId" : 1,
+  "scheduleId" : 2
+}, {
+  "studentId" : 12,
+  "fullName" : "Ratoncito Perez",
+  "tuition" : "2022120063",
+  "semester" : 8,
+  "status" : "enrolled",
+  "careerId" : 1,
+  "scheduleId" : 2
+}, {
+  "studentId" : 13,
+  "fullName" : "Ratoncito Perez segundo",
+  "tuition" : "2022120064",
+  "semester" : 8,
+  "status" : "enrolled",
+  "careerId" : 1,
+  "scheduleId" : 2
+}, {
+  "studentId" : 13,
+  "fullName" : "Ratoncito Perez tercero",
+  "tuition" : "2022120066",
+  "semester" : 8,
+  "status" : "enrolled",
+  "careerId" : 1,
+  "scheduleId" : 2
+}, {
+  "studentId" : 13,
+  "fullName" : "Ratoncito Perez cuarto",
+  "tuition" : "2022120068",
+  "semester" : 8,
+  "status" : "enrolled",
+  "careerId" : 1,
+  "scheduleId" : 2
+}, {
+  "studentId" : 2022120051,
+  "fullName" : "Ratoncito Perez cuarto",
+  "tuition" : "2022120068",
+  "semester" : 8,
+  "status" : "enrolled",
+  "careerId" : 1,
+  "scheduleId" : 2
+}, {
+  "studentId" : 13,
+  "fullName" : "Ratoncito Perez cuarto",
+  "tuition" : "2022120051",
+  "semester" : 8,
+  "status" : "enrolled",
+  "careerId" : 1,
+  "scheduleId" : 2
+} ]

@@ -1,0 +1,19 @@
+[ {
+  "scheduleId" : 2,
+  "name" : "SEXTO SEMESTRE",
+  "period" : "2023-2024B",
+  "semester" : 6,
+  "careerId" : 2
+}, {
+  "scheduleId" : 3,
+  "name" : "CUARTO SEMESTRE",
+  "period" : "2022-2023B",
+  "semester" : 4,
+  "careerId" : 1
+}, {
+  "scheduleId" : 10,
+  "name" : "segundo SEMESTRE",
+  "period" : "2024-2025B",
+  "semester" : 8,
+  "careerId" : 1
+} ]

@@ -1,0 +1,12 @@
+[
+  {
+    "careerId": 1,
+    "name": "Informática",
+    "headId": 1
+  },
+  {
+    "careerId": 2,
+    "name": "Biología",
+    "headId": 2
+  }
+]

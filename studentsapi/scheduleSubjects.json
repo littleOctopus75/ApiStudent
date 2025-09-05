@@ -1,0 +1,33 @@
+[ {
+  "scheduleSubjectId" : 1,
+  "scheduleId" : 1,
+  "subjectId" : 1,
+  "startTime" : "08:00",
+  "endTime" : "10:00",
+  "classroom" : "Aula 1",
+  "day" : "Monday"
+}, {
+  "scheduleSubjectId" : 2,
+  "scheduleId" : 1,
+  "subjectId" : 2,
+  "startTime" : "10:00",
+  "endTime" : "12:00",
+  "classroom" : "Aula 2",
+  "day" : "Wednesday"
+}, {
+  "scheduleSubjectId" : 103,
+  "scheduleId" : 1,
+  "subjectId" : 2,
+  "startTime" : "08:00",
+  "endTime" : "10:00",
+  "classroom" : "Aula 3",
+  "day" : "Monday"
+}, {
+  "scheduleSubjectId" : 1212,
+  "scheduleId" : 0,
+  "subjectId" : 0,
+  "startTime" : null,
+  "endTime" : null,
+  "classroom" : null,
+  "day" : null
+} ]
